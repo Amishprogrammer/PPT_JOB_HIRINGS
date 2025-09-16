@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Referral Advantage Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark background for the page */
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100vh;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 4rem;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+         .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 24px;
+        }
+        .swiper-pagination-bullet-active {
+            background: #4f46e5;
+        }
+        .slide-title {
+            font-weight: 900;
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .slide-subtitle {
+            font-size: 1.5rem;
+            color: #4b5563;
+            max-width: 800px;
+        }
+        .slide-content {
+            max-width: 1000px;
+            width: 100%;
+        }
+        .stat-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Slide 1: Title Slide -->
+            <div class="swiper-slide bg-gray-900 text-white" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80'); background-size: cover; background-position: center;">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <h1 class="text-6xl md:text-7xl font-black text-center leading-tight tracking-tight">The Referral Advantage</h1>
+                    <p class="mt-4 text-2xl md:text-3xl text-gray-300 max-w-4xl text-center">How Data-Driven Referral Programs Revolutionize Hiring, Retention, and Your Bottom Line</p>
+                    <p class="mt-12 text-xl text-gray-400">Presenter: Amish Singh</p>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Modern Hiring Challenge -->
+            <div class="swiper-slide bg-gray-50">
+                <div class="slide-content">
+                    <h2 class="slide-title text-gray-800">The Hiring Problem: Slow, Expensive, and Ineffective</h2>
+                    <div class="mt-8 grid md:grid-cols-2 gap-8 text-left">
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                             <div class="flex items-center">
+                                <i data-lucide="clock" class="w-8 h-8 text-red-500 mr-4"></i>
+                                <p class="text-lg text-gray-700">Traditional hiring is time-consuming, often taking 39 to 55 days to fill a role.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                             <div class="flex items-center">
+                                <i data-lucide="dollar-sign" class="w-8 h-8 text-red-500 mr-4"></i>
+                                <p class="text-lg text-gray-700">High costs associated with job boards, advertising, and long screening processes.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                             <div class="flex items-center">
+                                <i data-lucide="trending-down" class="w-8 h-8 text-red-500 mr-4"></i>
+                                <p class="text-lg text-gray-700">Poor retention rates, especially from job boards (only 14% of hires stay for two years).</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                             <div class="flex items-center">
+                                <i data-lucide="users" class="w-8 h-8 text-red-500 mr-4"></i>
+                                <p class="text-lg text-gray-700">Finding candidates who are a great cultural fit is a major challenge.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: A Better Way: The Power of Referrals -->
+            <div class="swiper-slide bg-indigo-50">
+                 <div class="slide-content text-center">
+                    <i data-lucide="building-2" class="w-24 h-24 text-indigo-600 mx-auto mb-6"></i>
+                    <h2 class="text-5xl font-extrabold text-indigo-900">The Solution is Already in Your Building</h2>
+                    <p class="mt-6 text-2xl text-gray-700">Your own employees are your best source for high-quality, long-lasting talent.</p>
+                    <div class="mt-8 bg-white p-8 rounded-xl shadow-lg border border-indigo-200 max-w-3xl mx-auto">
+                        <p class="text-xl text-gray-800">Employee referral programs leverage your team's trusted networks to find candidates who are pre-vetted for skill and cultural fit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Data: Unmatched Hiring Effectiveness -->
+            <div class="swiper-slide bg-gray-50">
+                <div class="slide-content">
+                    <h2 class="slide-title">Referrals Deliver Quality, Not Just Quantity</h2>
+                    <div class="mt-8 grid md:grid-cols-2 gap-8 items-center">
+                        <div class="flex flex-col items-center justify-center">
+                            <div class="relative w-64 h-64">
+                                <svg class="w-full h-full" viewBox="0 0 36 36">
+                                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#e5e7eb" stroke-width="3"></path>
+                                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="#4f46e5" stroke-width="3" stroke-dasharray="40, 100"></path>
+                                </svg>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                    <span class="text-5xl font-bold text-indigo-600">40%</span>
+                                    <span class="text-lg text-gray-600">of Hires</span>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-lg font-semibold">from Referrals</p>
+                        </div>
+                        <div class="text-left space-y-6">
+                            <p class="text-2xl text-gray-700">While referrals make up only 7% of all applications, they are responsible for an incredible 40% of all hires.</p>
+                             <div class="stat-card">
+                                <p class="text-xl font-bold text-indigo-700">Key Takeaway:</p>
+                                <p class="text-lg text-gray-600 mt-2">An applicant from a referral is far more likely to be hired than one from any other source.</p>
+                             </div>
+                            <p class="text-sm text-gray-500">Source: Zippia, 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Data: Speeding Up the Process -->
+            <div class="swiper-slide bg-gray-50">
+                <div class="slide-content">
+                    <h2 class="slide-title">Fill Roles Faster and Reduce Downtime</h2>
+                    <div class="mt-8 w-full">
+                        <p class="text-xl text-gray-600 mb-6">Average Time to Hire (in days)</p>
+                        <div class="space-y-4 text-left">
+                            <div class="flex items-center">
+                                <span class="w-48 font-medium text-gray-700">Referred Candidate:</span>
+                                <div class="w-full bg-gray-200 rounded-full h-8">
+                                    <div class="bg-green-500 h-8 rounded-full flex items-center justify-center text-white font-bold" style="width: 52.7%;">29</div>
+                                </div>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="w-48 font-medium text-gray-700">Job Board Candidate:</span>
+                                <div class="w-full bg-gray-200 rounded-full h-8">
+                                    <div class="bg-yellow-500 h-8 rounded-full flex items-center justify-center text-white font-bold" style="width: 70.9%;">39</div>
+                                </div>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="w-48 font-medium text-gray-700">Career Site Candidate:</span>
+                                <div class="w-full bg-gray-200 rounded-full h-8">
+                                    <div class="bg-red-500 h-8 rounded-full flex items-center justify-center text-white font-bold" style="width: 100%;">55</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 stat-card bg-green-50 border-green-200">
+                             <p class="text-xl font-bold text-green-800">Key Takeaway:</p>
+                             <p class="text-lg text-green-700 mt-2">Referrals cut the hiring time significantly, allowing new team members to start contributing sooner.</p>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4">Source: Research by LinkedIn</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Data: Building a Team That Stays -->
+            <div class="swiper-slide bg-gray-50">
+                <div class="slide-content">
+                    <h2 class="slide-title">Referrals are the #1 Source for Better Retention</h2>
+                    <div class="mt-8 grid md:grid-cols-2 gap-8 text-left">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Retention After 1 Year</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center"><span class="w-40 font-semibold">Referred Employees:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-blue-600 h-6 rounded-lg text-right pr-2 text-white text-sm" style="width: 46%;">46%</div></div></div>
+                                <div class="flex items-center"><span class="w-40 font-semibold">Career Site Hires:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-blue-400 h-6 rounded-lg text-right pr-2 text-white text-sm" style="width: 33%;">33%</div></div></div>
+                                <div class="flex items-center"><span class="w-40 font-semibold">Job Board Hires:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-blue-200 h-6 rounded-lg text-right pr-2 text-gray-700 text-sm" style="width: 22%;">22%</div></div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Retention After 2 Years</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center"><span class="w-40 font-semibold">Referred Employees:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-indigo-600 h-6 rounded-lg text-right pr-2 text-white text-sm" style="width: 45%;">45%</div></div></div>
+                                <div class="flex items-center"><span class="w-40 font-semibold">Job Board Hires:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-indigo-200 h-6 rounded-lg text-right pr-2 text-gray-700 text-sm" style="width: 14%;">14%</div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 stat-card bg-blue-50 border-blue-200">
+                         <p class="text-xl font-bold text-blue-800">Key Takeaway:</p>
+                         <p class="text-lg text-blue-700 mt-2">Referred hires are more committed and stay with the company longer, reducing turnover costs.</p>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4">Source: Jobvite</p>
+                </div>
+            </div>
+
+            <!-- Slide 7: Calculating the Costs: Technology Investment -->
+            <div class="swiper-slide bg-gray-800 text-white">
+                <div class="slide-content">
+                    <h2 class="text-5xl font-extrabold">Estimated Monthly Tech Costs</h2>
+                    <p class="text-xl text-gray-300 mt-2">For a Job Alert & Referral Service</p>
+                    <div class="mt-8 grid md:grid-cols-2 gap-8 text-left">
+                        <div class="bg-gray-700 p-6 rounded-lg">
+                            <i data-lucide="server" class="w-12 h-12 text-cyan-400 mb-4"></i>
+                            <h3 class="text-2xl font-bold">4 Cloud Servers</h3>
+                            <p class="text-gray-300 mt-2">Purpose: Web, Database, Job Processing</p>
+                            <p class="mt-4 text-3xl font-bold text-cyan-400">$80 - $250 / mo</p>
+                            <p class="text-gray-400">(₹6,700 - ₹21,000)</p>
+                        </div>
+                        <div class="bg-gray-700 p-6 rounded-lg">
+                            <i data-lucide="shield-check" class="w-12 h-12 text-cyan-400 mb-4"></i>
+                            <h3 class="text-2xl font-bold">Proxy Service (Residential)</h3>
+                            <p class="text-gray-300 mt-2">Purpose: Reliable Job Data Scraping</p>
+                            <p class="mt-4 text-3xl font-bold text-cyan-400">$300 - $700 / mo</p>
+                            <p class="text-gray-400">(₹25,000 - ₹58,000)</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-gray-900 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-white">Total Estimated Monthly Tech Cost</h3>
+                        <p class="mt-2 text-4xl font-black text-cyan-300">$380 - $950</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Business Model: Pricing for Colleges -->
+            <div class="swiper-slide bg-gray-50">
+                <div class="slide-content">
+                    <h2 class="slide-title">Creating a Win-Win for Students & Institutions</h2>
+                     <p class="slide-subtitle mb-8">Scenario: Mid-sized college with 5,000 graduating students.</p>
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div class="stat-card transform hover:scale-105 transition-transform duration-300">
+                             <h3 class="text-2xl font-bold text-gray-800">Option 1: Flat Annual Fee</h3>
+                             <p class="mt-4 text-4xl font-extrabold text-indigo-600">₹8L - ₹20L / year</p>
+                             <p class="text-gray-500">($9,600 - $24,000)</p>
+                             <div class="mt-4 bg-indigo-100 text-indigo-800 text-sm font-medium inline-flex items-center px-2.5 py-0.5 rounded-full">
+                                <i data-lucide="check-circle" class="w-4 h-4 mr-1.5"></i>
+                                Simple, predictable pricing for the institution.
+                             </div>
+                        </div>
+                        <div class="stat-card transform hover:scale-105 transition-transform duration-300">
+                             <h3 class="text-2xl font-bold text-gray-800">Option 2: Per-Student Model</h3>
+                             <p class="mt-4 text-4xl font-extrabold text-teal-600">₹250 - ₹500 / student</p>
+                             <p class="text-gray-500">Total: ~₹12.5L / year ($15,000)</p>
+                             <div class="mt-4 bg-teal-100 text-teal-800 text-sm font-medium inline-flex items-center px-2.5 py-0.5 rounded-full">
+                                 <i data-lucide="check-circle" class="w-4 h-4 mr-1.5"></i>
+                                Scales with the size of the student body.
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Conclusion -->
+            <div class="swiper-slide bg-gray-900 text-white" style="background-image: linear-gradient(to right, #4f46e5, #7c3aed);">
+                <div class="slide-content">
+                    <h2 class="text-6xl font-black">Why This Matters</h2>
+                    <div class="mt-8 text-left max-w-2xl mx-auto space-y-6">
+                        <div class="flex items-start text-xl"><i data-lucide="bar-chart-3" class="w-8 h-8 mr-4 mt-1 text-green-300 flex-shrink-0"></i><span>Data-Backed: The statistics overwhelmingly prove that referrals are the most effective hiring source.</span></div>
+                        <div class="flex items-start text-xl"><i data-lucide="target" class="w-8 h-8 mr-4 mt-1 text-green-300 flex-shrink-0"></i><span>Better ROI: Lower hiring costs and higher retention lead to significant long-term savings.</span></div>
+                        <div class="flex items-start text-xl"><i data-lucide="heart-handshake" class="w-8 h-8 mr-4 mt-1 text-green-300 flex-shrink-0"></i><span>Stronger Culture: Hiring people who are already connected to your team builds a more cohesive and engaged workforce.</span></div>
+                        <div class="flex items-start text-xl"><i data-lucide="rocket" class="w-8 h-8 mr-4 mt-1 text-green-300 flex-shrink-0"></i><span>Viable Business: The technology costs are manageable, and the service provides clear value to colleges, making it a strong business case.</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Sources -->
+            <div class="swiper-slide bg-gray-200">
+                <div class="slide-content text-left">
+                    <h2 class="slide-title text-center text-gray-800">Sources</h2>
+                    <ul class="mt-8 list-disc list-inside bg-white p-8 rounded-lg shadow-md space-y-4 text-lg text-gray-700">
+                        <li>Zippia, "25 Incredible Employee Referral Statistics," 2023.</li>
+                        <li>Jobvite, Recruiting Funnel Benchmark Reports & various publications.</li>
+                        <li>LinkedIn, Global Talent Trends & associated research.</li>
+                        <li>HR Morning, "Employee referral programs: A complete guide for success."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            keyboard: {
+                enabled: true,
+            },
+        });
+        lucide.createIcons();
+    </script>
+</body>
+</html>
