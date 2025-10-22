@@ -3,347 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Referral Advantage Presentation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>JobsConfirmed.com - Campus Placement Enhancement</title>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827; /* Dark background for the page */
+        /* --- General Setup & Variables --- */
+        :root {
+            --color-primary: #000080; /* Dark Navy Blue */
+            --color-secondary: #007bff; /* A brighter blue for accents */
+            --color-text-light: #ffffff; /* White text */
+            --color-text-dark: #333333; /* Dark text for contrast */
+            --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --section-padding: 80px 50px;
         }
-        .swiper-container {
-            width: 100%;
-            height: 100vh;
-        }
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 4rem;
+
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            text-align: center;
-            background-color: #f9fafb;
-            color: #1f2937;
         }
-        .swiper-button-next, .swiper-button-prev {
-            color: #403C3B;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
+
+        body, html {
+            height: 100%;
+            overflow: hidden; /* Hide default scrollbar */
+            font-family: var(--font-family-main);
+            color: var(--color-text-light);
+            background-color: var(--color-primary);
         }
-         .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 20px;
+
+        /* --- Scroll Container & Snapping (The 'Classy Scroll' Effect) --- */
+        #presentation-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory; /* Enforce snapping */
+            -webkit-overflow-scrolling: touch; /* Better mobile scrolling */
         }
-        .swiper-pagination-bullet-active {
-            background: #4f46e5;
-        }
-        .slide-title {
-            font-weight: 900;
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-        .slide-subtitle {
-            font-size: 1.5rem;
-            color: #4b5563;
-            max-width: 800px;
-        }
-        .slide-content {
-            max-width: 1000px;
+
+        .slide {
+            height: 100vh;
             width: 100%;
+            scroll-snap-align: start; /* Snap each slide to the start of the viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: var(--section-padding);
+            text-align: center;
+            position: relative;
+            background-color: var(--color-primary);
+            border-bottom: 5px solid rgba(255, 255, 255, 0.1);
         }
-        .stat-card {
-            background-color: #ffffff;
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e5e7eb;
+
+        /* --- Typography & Elements --- */
+        h1, h2 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            color: var(--color-text-light);
+        }
+        h2 {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+        }
+        h3 {
+            font-size: 1.7rem;
+            margin-top: 20px;
+            color: var(--color-secondary);
+            font-weight: 600;
+        }
+        p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 10px auto;
+            line-height: 1.6;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
             text-align: left;
+            max-width: 900px;
+        }
+        ul li {
+            font-size: 1.2rem;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 40px;
+        }
+        ul li:last-child {
+            border-bottom: none;
+        }
+        ul li::before {
+            content: '🚀'; /* Rocket emoji as a stylish bullet point */
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        .highlight {
+            color: var(--color-secondary);
+            font-weight: 700;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 30px;
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* --- Layout Grids for Content Slides --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            text-align: left;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .content-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .content-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        /* --- Animation (Entrances on scroll) --- */
+        .animated-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide.active .animated-element {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .slide.active h1, .slide.active h2 { transition-delay: 0.1s; }
+        .slide.active p, .slide.active .content-grid { transition-delay: 0.3s; }
+        .slide.active ul li:nth-child(1) { transition-delay: 0.5s; }
+        .slide.active ul li:nth-child(2) { transition-delay: 0.7s; }
+        .slide.active ul li:nth-child(3) { transition-delay: 0.9s; }
+        .slide.active ul li:nth-child(4) { transition-delay: 1.1s; }
+        .slide.active ul li:nth-child(5) { transition-delay: 1.3s; }
+
+        /* Pricing slide specific styles */
+        .pricing-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 2px solid var(--color-secondary);
+            max-width: 600px;
+        }
+        .pricing-box p {
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+        .pricing-detail {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #ffcc00; /* Gold color for maximum charge detail */
         }
     </style>
 </head>
 <body>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <!-- Slide 1: Title Slide -->
-            <div class="swiper-slide bg-gray-900 text-white" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80'); background-size: cover; background-position: center;">
-                <div class="flex flex-col items-center justify-center h-full">
-                    <h1 class="text-6xl md:text-7xl font-black text-center leading-tight tracking-tight">The Referral Advantage</h1>
-                    <p class="mt-4 text-2xl md:text-3xl text-gray-300 max-w-4xl text-center">How Data-Driven Referral Programs Revolutionize Hiring, Retention, and Your Bottom Line</p>
-                    <p class="mt-12 text-xl text-gray-400">Presenter: Amish Singh</p>
+
+    <div id="presentation-container">
+
+        <section id="slide-intro" class="slide active">
+            <h1 class="animated-element">Campus Placement Enhancement Proposal</h1>
+            <p class="animated-element" style="font-size: 1.5rem; max-width: 900px;">
+                Presented by <span class="highlight">JobsConfirmed.com</span> to <br>
+                The Placement Cell / Administration, **DY Patil University**
+            </p>
+            <p class="animated-element" style="margin-top: 40px;">
+                <span style="font-style: italic;">"Making student placements faster, smarter, and more connected."</span>
+            </p>
+            <div class="animated-element" style="margin-top: 60px; font-size: 1.1rem; opacity: 0.8;">
+                <p>Aditya Sharma, Co-founder</p>
+                <p>Date: 19th October, 2025</p>
+            </div>
+        </section>
+
+        <section id="slide-value" class="slide">
+            <h2 class="animated-element">Our Vision: The Smart Placement Ecosystem</h2>
+            <p class="animated-element">
+                JobsConfirmed.com is an intuitive solution built to **transform and integrate** the entire campus placement experience. We seamlessly blend with your existing processes while maximizing efficiency and student success.
+            </p>
+
+            <div class="content-grid animated-element">
+                <div class="content-item">
+                    <h3>📈 Enhanced Efficiency</h3>
+                    <p>Streamline every step of the placement cycle, from resume submission to final offer acceptance, reducing administrative load.</p>
+                </div>
+                <div class="content-item">
+                    <h3>🎯 Boosted Visibility</h3>
+                    <p>We actively boost student profiles to attract better recruiters and improve institutional branding in the hiring ecosystem.</p>
+                </div>
+                <div class="content-item">
+                    <h3>🔗 Real-World Connection</h3>
+                    <p>Our features, like the referral system, mirror real-world hiring patterns, better preparing students for the corporate environment.</p>
+                </div>
+                <div class="content-item">
+                    <h3>📊 Data-Driven Decisions</h3>
+                    <p>Empower your Placement Cell with real-time data and insights for strategic planning and faculty/guardian reporting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="slide-features-1" class="slide">
+            <h2 class="animated-element">What We Offer: Real-Time Opportunity & Networking</h2>
+
+            <ul class="animated-element">
+                <li>
+                    <h3>1. Fastest Access to Job Openings</h3>
+                    <p>Instant availability of recruiter-posted openings to eligible students, ensuring **real-time job access** and reducing placement delays.</p>
+                </li>
+                <li>
+                    <h3>2. Referral & Networking System (Social-First Recruitment)</h3>
+                    <p>Built-in ecosystem to connect students with company employees and alumni, enabling them to **leverage personal networks for referrals** and significantly improve recruitment chances.</p>
+                </li>
+                <li>
+                    <h3>3. Platform Integration with Top Hiring Channels</h3>
+                    <p>A single platform combining the best of **LinkedIn, InstaHire, and Indeed**—blending job listings, networking, and profile boosting.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="slide-features-2" class="slide">
+            <h2 class="animated-element">What We Offer: Management & Readiness Tools</h2>
+
+            <ul class="animated-element">
+                <li>
+                    <h3>4. Student Management Dashboard for Colleges</h3>
+                    <p>A dedicated portal offering day-to-day tracking of student engagement, placement activity insights, and a complete historical view for committee support.</p>
+                </li>
+                <li>
+                    <h3>5. Resume Upload & Review Tool</h3>
+                    <p>Allows the Placement Cell to efficiently **review submissions, suggest improvements, and track student readiness** before placement drives, increasing job match rates.</p>
+                </li>
+                <li>
+                    <h3>6. Boosted Visibility for Students & Institutions</h3>
+                    <p>We actively push profiles to recruiters, increasing **visibility among hiring managers** and chances of attracting better opportunities and institutional branding.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="slide-pricing" class="slide">
+            <h2 class="animated-element">Investment & Collaboration</h2>
+
+            <div class="pricing-box animated-element">
+                <h3>Flexible, Performance-Based Pricing</h3>
+                <p>The pricing is dynamic after a basic one-time onboarding fee. Our logic: if your college doesn’t need a big pack, it shouldn't pay for it.</p>
+                <p class="pricing-detail">
+                    Maximum Charge: <span style="font-size: 2.2rem;">₹5</span> per student per month per keyword.
+                </p>
+                <p style="font-style: italic; margin-top: 20px; font-size: 1rem;">
+                    We are building a smart placement ecosystem that empowers colleges to deliver superior career outcomes, affordably.
+                </p>
+            </div>
+
+            <div class="animated-element" style="margin-top: 40px;">
+                <h3 style="color: var(--color-text-light);">Next Steps: Detailed Walkthrough</h3>
+                <p>We would be happy to schedule a detailed walkthrough or demo of the product at your convenience.</p>
+                <a href="#slide-contact" class="cta-button">Schedule a Demo Today</a>
+            </div>
+        </section>
+
+        <section id="slide-contact" class="slide">
+            <h2 class="animated-element">Let's Collaborate</h2>
+            <p class="animated-element">
+                We look forward to the opportunity to collaborate and make a lasting impact on your students' career journeys.
+            </p>
+
+            <div class="content-grid animated-element" style="grid-template-columns: 1fr 1fr 1fr; max-width: 900px;">
+                <div class="content-item">
+                    <h3>Co-founder</h3>
+                    <p>Aditya Sharma</p>
+                </div>
+                <div class="content-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:contact.jobsconfirmed@gmail.com" style="color: var(--color-text-light); text-decoration: none;">contact.jobsconfirmed@gmail.com</a></p>
+                </div>
+                <div class="content-item">
+                    <h3>Phone</h3>
+                    <p>+91 86387 42959</p>
                 </div>
             </div>
 
-            <!-- Slide 2: The Modern Hiring Challenge -->
-            <div class="swiper-slide bg-gray-50">
-                <div class="slide-content">
-                    <h2 class="slide-title text-gray-800">The Hiring Problem: Slow, Expensive, and Ineffective</h2>
-                    <div class="mt-8 grid md:grid-cols-2 gap-8 text-left">
-                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                             <div class="flex items-center">
-                                <i data-lucide="clock" class="w-8 h-8 text-red-500 mr-4"></i>
-                                <p class="text-lg text-gray-700">Traditional hiring is time-consuming, often taking 39 to 55 days to fill a role.</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                             <div class="flex items-center">
-                                <i data-lucide="dollar-sign" class="w-8 h-8 text-red-500 mr-4"></i>
-                                <p class="text-lg text-gray-700">High costs associated with job boards, advertising, and long screening processes.</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                             <div class="flex items-center">
-                                <i data-lucide="trending-down" class="w-8 h-8 text-red-500 mr-4"></i>
-                                <p class="text-lg text-gray-700">Poor retention rates, especially from job boards (only 14% of hires stay for two years).</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                             <div class="flex items-center">
-                                <i data-lucide="users" class="w-8 h-8 text-red-500 mr-4"></i>
-                                <p class="text-lg text-gray-700">Finding candidates who are a great cultural fit is a major challenge.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="animated-element" style="margin-top: 60px; font-size: 1.5rem; font-weight: 700; color: var(--color-secondary);">
+                JobsConfirmed.com
+            </p>
+        </section>
 
-            <!-- Slide 3: A Better Way: The Power of Referrals -->
-            <div class="swiper-slide bg-indigo-50">
-                 <div class="slide-content text-center">
-                    <i data-lucide="building-2" class="w-24 h-24 text-indigo-600 mx-auto mb-6"></i>
-                    <h2 class="text-5xl font-extrabold text-indigo-900">The Solution is Already in Your Building</h2>
-                    <p class="mt-6 text-2xl text-gray-700">Your own employees are your best source for high-quality, long-lasting talent.</p>
-                    <div class="mt-8 bg-white p-8 rounded-xl shadow-lg border border-indigo-200 max-w-3xl mx-auto">
-                        <p class="text-xl text-gray-800">Employee referral programs leverage your team's trusted networks to find candidates who are pre-vetted for skill and cultural fit.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 4: Data: Unmatched Hiring Effectiveness -->
-            <div class="swiper-slide bg-gray-50">
-                <div class="slide-content">
-                    <h2 class="slide-title">Referrals Deliver Quality, Not Just Quantity</h2>
-                    <div class="mt-8 grid md:grid-cols-2 gap-8 items-center">
-                        <div class="flex flex-col items-center justify-center">
-                            <div class="relative w-64 h-64">
-                                <svg class="w-full h-full" viewBox="0 0 36 36">
-                                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#e5e7eb" stroke-width="3"></path>
-                                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="#4f46e5" stroke-width="3" stroke-dasharray="40, 100"></path>
-                                </svg>
-                                <div class="absolute inset-0 flex flex-col items-center justify-center">
-                                    <span class="text-5xl font-bold text-indigo-600">40%</span>
-                                    <span class="text-lg text-gray-600">of Hires</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-lg font-semibold">from Referrals</p>
-                        </div>
-                        <div class="text-left space-y-6">
-                            <p class="text-2xl text-gray-700">While referrals make up only 7% of all applications, they are responsible for an incredible 40% of all hires.</p>
-                             <div class="stat-card">
-                                <p class="text-xl font-bold text-indigo-700">Key Takeaway:</p>
-                                <p class="text-lg text-gray-600 mt-2">An applicant from a referral is far more likely to be hired than one from any other source.</p>
-                             </div>
-                            <p class="text-sm text-gray-500">Source: Zippia, 2023</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 5: Data: Speeding Up the Process -->
-            <div class="swiper-slide bg-gray-50">
-                <div class="slide-content">
-                    <h2 class="slide-title">Fill Roles Faster and Reduce Downtime</h2>
-                    <div class="mt-8 w-full">
-                        <p class="text-xl text-gray-600 mb-6">Average Time to Hire (in days)</p>
-                        <div class="space-y-4 text-left">
-                            <div class="flex items-center">
-                                <span class="w-48 font-medium text-gray-700">Referred Candidate:</span>
-                                <div class="w-full bg-gray-200 rounded-full h-8">
-                                    <div class="bg-green-500 h-8 rounded-full flex items-center justify-center text-white font-bold" style="width: 52.7%;">29</div>
-                                </div>
-                            </div>
-                             <div class="flex items-center">
-                                <span class="w-48 font-medium text-gray-700">Job Board Candidate:</span>
-                                <div class="w-full bg-gray-200 rounded-full h-8">
-                                    <div class="bg-yellow-500 h-8 rounded-full flex items-center justify-center text-white font-bold" style="width: 70.9%;">39</div>
-                                </div>
-                            </div>
-                             <div class="flex items-center">
-                                <span class="w-48 font-medium text-gray-700">Career Site Candidate:</span>
-                                <div class="w-full bg-gray-200 rounded-full h-8">
-                                    <div class="bg-red-500 h-8 rounded-full flex items-center justify-center text-white font-bold" style="width: 100%;">55</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-8 stat-card bg-green-50 border-green-200">
-                             <p class="text-xl font-bold text-green-800">Key Takeaway:</p>
-                             <p class="text-lg text-green-700 mt-2">Referrals cut the hiring time significantly, allowing new team members to start contributing sooner.</p>
-                        </div>
-                        <p class="text-sm text-gray-500 mt-4">Source: Research by LinkedIn</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 6: Data: Building a Team That Stays -->
-            <div class="swiper-slide bg-gray-50">
-                <div class="slide-content">
-                    <h2 class="slide-title">Referrals are the #1 Source for Better Retention</h2>
-                    <div class="mt-8 grid md:grid-cols-2 gap-8 text-left">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Retention After 1 Year</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-center"><span class="w-40 font-semibold">Referred Employees:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-blue-600 h-6 rounded-lg text-right pr-2 text-white text-sm" style="width: 46%;">46%</div></div></div>
-                                <div class="flex items-center"><span class="w-40 font-semibold">Career Site Hires:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-blue-400 h-6 rounded-lg text-right pr-2 text-white text-sm" style="width: 33%;">33%</div></div></div>
-                                <div class="flex items-center"><span class="w-40 font-semibold">Job Board Hires:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-blue-200 h-6 rounded-lg text-right pr-2 text-gray-700 text-sm" style="width: 22%;">22%</div></div></div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Retention After 2 Years</h3>
-                            <div class="space-y-3">
-                                <div class="flex items-center"><span class="w-40 font-semibold">Referred Employees:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-indigo-600 h-6 rounded-lg text-right pr-2 text-white text-sm" style="width: 45%;">45%</div></div></div>
-                                <div class="flex items-center"><span class="w-40 font-semibold">Job Board Hires:</span><div class="w-full bg-gray-200 rounded-lg h-6"><div class="bg-indigo-200 h-6 rounded-lg text-right pr-2 text-gray-700 text-sm" style="width: 14%;">14%</div></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-8 stat-card bg-blue-50 border-blue-200">
-                         <p class="text-xl font-bold text-blue-800">Key Takeaway:</p>
-                         <p class="text-lg text-blue-700 mt-2">Referred hires are more committed and stay with the company longer, reducing turnover costs.</p>
-                    </div>
-                    <p class="text-sm text-gray-500 mt-4">Source: Jobvite</p>
-                </div>
-            </div>
-            <div class="swiper-slide bg-gray-900 text-white" style="background-image: linear-gradient(to right, #1e3a8a, #10b981);">
-                <div class="slide-content">
-                    <h2 class="text-6xl font-black">Unlocking NIRF Success: The Placement Edge</h2>
-                    <div class="mt-8 text-left max-w-2xl mx-auto space-y-6">
-                        <div class="flex items-start text-xl"><i data-lucide="award" class="w-8 h-8 mr-4 mt-1 text-yellow-300 flex-shrink-0"></i><span><strong>Boosted Graduation Outcomes:</strong> Directly impacts the 'Graduation Outcomes' parameter by improving placement rates, post graduation placements support and median salary statistics, which are key metrics in NIRF rankings.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="trending-up" class="w-8 h-8 mr-4 mt-1 text-yellow-300 flex-shrink-0"></i><span><strong>Enhanced Employer Perception:</strong> A streamlined process for jobs and referrals builds a strong reputation among top companies, significantly boosting the 'Peer Perception' score.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="users" class="w-8 h-8 mr-4 mt-1 text-yellow-300 flex-shrink-0"></i><span><strong>Attracting Top Talent:</strong> A strong placement and referral system acts as a magnet for high-achieving students, improving the overall quality of intake and contributing to a better 'Teaching, Learning & Resources' score.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="shield-check" class="w-8 h-8 mr-4 mt-1 text-yellow-300 flex-shrink-0"></i><span><strong>Data-Driven Reporting:</strong> The system provides accurate and verifiable data for NIRF submissions, ensuring transparency and credibility, which strengthens the institution's overall profile.</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide bg-gray-900 text-white" style="background-image: linear-gradient(to right, #0d9488, #2563eb);">
-                <div class="slide-content">
-                    <h2 class="text-6xl font-black">Seamless Campus Integration</h2>
-                    <div class="mt-8 text-left max-w-2xl mx-auto space-y-6">
-                        <div class="flex items-start text-xl"><i data-lucide="layout-dashboard" class="w-8 h-8 mr-4 mt-1 text-orange-300 flex-shrink-0"></i><span><strong>Instant Email Alerts:</strong> Job openings and referral opportunities are sent directly to every student's inbox the moment they're posted.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="link" class="w-8 h-8 mr-4 mt-1 text-orange-300 flex-shrink-0"></i><span><strong>Universal Outreach:</strong> Ensuring 100% of students are notified, eliminating communication gaps, and maximizing participation in placement drives.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="smartphone" class="w-8 h-8 mr-4 mt-1 text-orange-300 flex-shrink-0"></i><span><strong>Customized Feeds:</strong> Students receive alerts tailored to their academic discipline and career interests, cutting through the noise and increasing relevance.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="link" class="w-8 h-8 mr-4 mt-1 text-orange-300 flex-shrink-0"></i><span><strong>Direct Action Links:</strong> Each email contains actionable links to apply, view details, or request a referral, streamlining the entire process from notification to application.</span></div>
-                    </div>
-                </div>
-            </div>
-<!--
-            Slide 7: Calculating the Costs: Technology Investment
-            <div class="swiper-slide bg-gray-800 text-white">
-                <div class="slide-content">
-                    <h2 class="text-5xl font-extrabold">Estimated Monthly Tech Costs</h2>
-                    <p class="text-xl text-gray-300 mt-2">For a Job Alert & Referral Service</p>
-                    <div class="mt-8 grid md:grid-cols-2 gap-8 text-left">
-                        <div class="bg-gray-700 p-6 rounded-lg">
-                            <i data-lucide="server" class="w-12 h-12 text-cyan-400 mb-4"></i>
-                            <h3 class="text-2xl font-bold">4 Cloud Servers</h3>
-                            <p class="text-gray-300 mt-2">Purpose: Web, Database, Job Processing</p>
-                            <p class="mt-4 text-3xl font-bold text-cyan-400">$80 - $250 / mo</p>
-                            <p class="text-gray-400">(₹6,700 - ₹21,000)</p>
-                        </div>
-                        <div class="bg-gray-700 p-6 rounded-lg">
-                            <i data-lucide="shield-check" class="w-12 h-12 text-cyan-400 mb-4"></i>
-                            <h3 class="text-2xl font-bold">Proxy Service (Residential)</h3>
-                            <p class="text-gray-300 mt-2">Purpose: Reliable Job Data Scraping</p>
-                            <p class="mt-4 text-3xl font-bold text-cyan-400">$300 - $700 / mo</p>
-                            <p class="text-gray-400">(₹25,000 - ₹58,000)</p>
-                        </div>
-                    </div>
-                    <div class="mt-8 bg-gray-900 p-6 rounded-lg">
-                        <h3 class="text-xl font-bold text-white">Total Estimated Monthly Tech Cost</h3>
-                        <p class="mt-2 text-4xl font-black text-cyan-300">$500 - $950</p>
-                    </div>
-                </div>
-            </div>
-
-             Slide 8: Business Model: Pricing for Colleges 
-            <div class="swiper-slide bg-gray-50">
-                <div class="slide-content">
-                    <h2 class="slide-title">Creating a Win-Win for Students & Institutions</h2>
-                     <p class="slide-subtitle mb-8">Scenario: Mid-sized college with 5,000 graduating students.</p>
-                    <div class="grid md:grid-cols-2 gap-8 text-left">
-                        <div class="stat-card transform hover:scale-105 transition-transform duration-300">
-                             <h3 class="text-2xl font-bold text-gray-800">Option 1: Flat Annual Fee</h3>
-                             <p class="mt-4 text-4xl font-extrabold text-indigo-600">₹9L - ₹14L / year</p>
-                             <p class="text-gray-500">($10,000 - $16,000)</p>
-                             <div class="mt-4 bg-indigo-100 text-indigo-800 text-sm font-medium inline-flex items-center px-2.5 py-0.5 rounded-full">
-                                <i data-lucide="check-circle" class="w-4 h-4 mr-1.5"></i>
-                                Simple, predictable pricing for the institution.
-                             </div>
-                        </div>
-                        <div class="stat-card transform hover:scale-105 transition-transform duration-300">
-                             <h3 class="text-2xl font-bold text-gray-800">Option 2: Per-Student Model</h3>
-                             <p class="mt-4 text-4xl font-extrabold text-teal-600">₹250 - ₹500 / student</p>
-                             <p class="text-gray-500">Total: ~₹12.5L / year considering 5000 students opt for it...</p>
-                             <div class="mt-4 bg-teal-100 text-teal-800 text-sm font-medium inline-flex items-center px-2.5 py-0.5 rounded-full">
-                                 <i data-lucide="check-circle" class="w-4 h-4 mr-1.5"></i>
-                                Scales with the size of the student body.
-                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
--->
-            <!-- Slide 9: Conclusion -->
-            <div class="swiper-slide bg-gray-900 text-white" style="background-image: linear-gradient(to right, #4f46e5, #7c3aed);">
-                <div class="slide-content">
-                    <h2 class="text-6xl font-black">Why This Matters</h2>
-                    <div class="mt-8 text-left max-w-2xl mx-auto space-y-6">
-                        <div class="flex items-start text-xl"><i data-lucide="bar-chart-3" class="w-8 h-8 mr-4 mt-1 text-green-300 flex-shrink-0"></i><span>Data-Backed: The statistics overwhelmingly prove that referrals are the most effective hiring source.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="target" class="w-8 h-8 mr-4 mt-1 text-green-300 flex-shrink-0"></i><span>Better ROI: Lower hiring costs and higher retention lead to significant long-term savings.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="heart-handshake" class="w-8 h-8 mr-4 mt-1 text-green-300 flex-shrink-0"></i><span>Stronger Culture: Hiring people who are already connected to your team builds a more cohesive and engaged workforce.</span></div>
-                        <div class="flex items-start text-xl"><i data-lucide="rocket" class="w-8 h-8 mr-4 mt-1 text-green-300 flex-shrink-0"></i><span>Viable Business: The technology costs are manageable, and the service provides clear value to colleges, making it a strong business case.</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 10: Sources -->
-            <div class="swiper-slide bg-gray-200">
-                <div class="slide-content text-left">
-                    <h2 class="slide-title text-center text-gray-800">Sources</h2>
-                    <ul class="mt-8 list-disc list-inside bg-white p-8 rounded-lg shadow-md space-y-4 text-lg text-gray-700">
-                        <li>Zippia, "25 Incredible Employee Referral Statistics," 2023.</li>
-                        <li>Jobvite, Recruiting Funnel Benchmark Reports & various publications.</li>
-                        <li>LinkedIn, Global Talent Trends & associated research.</li>
-                        <li>HR Morning, "Employee referral programs: A complete guide for success."</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Navigation -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
     </div>
 
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            keyboard: {
-                enabled: true,
-            },
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('presentation-container');
+            const slides = document.querySelectorAll('.slide');
+
+            // --- Intersection Observer for Scroll-Based Animations ---
+            // This observes which slide is currently in view and adds the 'active' class to trigger CSS animations.
+
+            const observerOptions = {
+                root: container,
+                threshold: 0.5 // Trigger when 50% of the slide is visible
+            };
+
+            const slideObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Activate the current slide
+                        entry.target.classList.add('active');
+                        // Deactivate others (optional, but good for clean transitions)
+                        slides.forEach(s => {
+                            if (s !== entry.target) {
+                                s.classList.remove('active');
+                            }
+                        });
+                    } else {
+                        // Optionally remove 'active' when it leaves view
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, observerOptions);
+
+            slides.forEach(slide => {
+                slideObserver.observe(slide);
+            });
+
+            // Initial setup to ensure the first slide animates immediately
+            if (slides.length > 0) {
+                slides[0].classList.add('active');
+            }
+
         });
-        lucide.createIcons();
     </script>
 </body>
 </html>
