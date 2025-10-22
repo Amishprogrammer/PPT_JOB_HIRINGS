@@ -201,7 +201,7 @@
             </p>
             <div class="animated-element" style="margin-top: 60px; font-size: 1.1rem; opacity: 0.8;">
                 <p>JobsConfirmed</p>
-                <p>Date: 19th October, 2025</p>
+                <p>Date: <span id="current-date">Fetching Date...</span></p>
             </div>
         </section>
 
@@ -323,27 +323,41 @@
             const container = document.getElementById('presentation-container');
             const slides = document.querySelectorAll('.slide');
 
-            // --- Intersection Observer for Scroll-Based Animations ---
-            // This observes which slide is currently in view and adds the 'active' class to trigger CSS animations.
+            // --- Function to Format and Display Date ---
+            function updateDate() {
+                const now = new Date();
+                const options = { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                };
+                const formattedDate = now.toLocaleDateString('en-US', options);
+                
+                const dateElement = document.getElementById('current-date');
+                if (dateElement) {
+                    dateElement.textContent = formattedDate;
+                }
+            }
+            
+            // Call the function to set the date immediately
+            updateDate();
 
+            // --- Intersection Observer for Scroll-Based Animations ---
             const observerOptions = {
                 root: container,
-                threshold: 0.5 // Trigger when 50% of the slide is visible
+                threshold: 0.5 
             };
 
             const slideObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Activate the current slide
                         entry.target.classList.add('active');
-                        // Deactivate others (optional, but good for clean transitions)
                         slides.forEach(s => {
                             if (s !== entry.target) {
                                 s.classList.remove('active');
                             }
                         });
                     } else {
-                        // Optionally remove 'active' when it leaves view
                         entry.target.classList.remove('active');
                     }
                 });
