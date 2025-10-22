@@ -7,10 +7,10 @@
     <style>
         /* --- General Setup & Variables --- */
         :root {
-            --color-primary: #589AE8; /* Dark Navy Blue */
-            --color-secondary: #FFFFFF; /* A brighter blue for accents */
-            --color-text-light: #ffffff; /* White text */
-            --color-text-dark: #333333; /* Dark text for contrast */
+            --color-primary: #589AE8; /* Bright Sky Blue */
+            --color-secondary: #0056b3; /* Darker accent blue for headings/highlights */
+            --color-text-dark: #333333; /* Dark text for readability on light background */
+            --color-text-light: #ffffff; /* White text, primarily for buttons/dark elements */
             --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             --section-padding: 80px 50px;
         }
@@ -25,7 +25,7 @@
             height: 100%;
             overflow: hidden; /* Hide default scrollbar */
             font-family: var(--font-family-main);
-            color: var(--color-text-light);
+            color: var(--color-text-dark); /* Default text color set to dark for readability */
             background-color: var(--color-primary);
         }
 
@@ -49,7 +49,7 @@
             text-align: center;
             position: relative;
             background-color: var(--color-primary);
-            border-bottom: 5px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 5px solid rgba(0, 0, 0, 0.1); /* Darker border for contrast */
         }
 
         /* --- Typography & Elements --- */
@@ -57,14 +57,14 @@
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 20px;
+            color: var(--color-secondary); /* Headings use the darker accent blue */
         }
         h1 {
             font-size: 3.5rem;
-            color: var(--color-text-light);
+            color: var(--color-text-light); /* Main title can be white for impact on the blue background */
         }
         h2 {
             font-size: 2.5rem;
-            color: var(--color-secondary);
         }
         h3 {
             font-size: 1.7rem;
@@ -77,6 +77,7 @@
             max-width: 800px;
             margin: 10px auto;
             line-height: 1.6;
+            color: var(--color-text-dark); /* All body text is dark */
         }
         ul {
             list-style: none;
@@ -88,24 +89,26 @@
         ul li {
             font-size: 1.2rem;
             padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Darker border */
             position: relative;
             padding-left: 40px;
+            color: var(--color-text-dark); /* List item text is dark */
         }
         ul li:last-child {
             border-bottom: none;
         }
         ul li::before {
-            content: '🚀'; /* Rocket emoji as a stylish bullet point */
+            content: '●'; /* Simple dark bullet point */
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
             font-size: 1.2em;
+            color: var(--color-secondary); /* Bullet point in accent blue */
         }
 
         .highlight {
-            color: var(--color-secondary);
+            color: var(--color-secondary); /* Highlight in darker accent blue */
             font-weight: 700;
         }
 
@@ -113,8 +116,8 @@
             display: inline-block;
             padding: 15px 30px;
             margin-top: 30px;
-            background-color: var(--color-secondary);
-            color: var(--color-text-light);
+            background-color: var(--color-secondary); /* Button uses darker accent blue */
+            color: var(--color-text-light); /* Button text is white */
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 600;
@@ -122,7 +125,7 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .cta-button:hover {
-            background-color: #0056b3;
+            background-color: #003d80; /* Even darker blue on hover for button */
             transform: translateY(-2px);
         }
 
@@ -137,14 +140,21 @@
             max-width: 1200px;
         }
         .content-item {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.05); /* Slightly transparent dark background for content items */
             padding: 30px;
             border-radius: 10px;
             transition: all 0.3s ease;
+            color: var(--color-text-dark); /* Ensure text inside is dark */
         }
         .content-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.1); /* Darker on hover */
             transform: translateY(-5px);
+        }
+        .content-item h3 {
+            color: var(--color-secondary); /* Headings inside content items */
+        }
+        .content-item p {
+            color: var(--color-text-dark); /* Paragraphs inside content items */
         }
 
         /* --- Animation (Entrances on scroll) --- */
@@ -167,23 +177,56 @@
 
         /* Pricing slide specific styles */
         .pricing-box {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.1); /* Darker background for pricing box */
             padding: 30px;
             border-radius: 10px;
             margin-top: 30px;
             border: 2px solid var(--color-secondary);
             max-width: 600px;
+            color: var(--color-text-dark); /* Ensure text inside is dark */
         }
         .pricing-box p {
             font-size: 1.3rem;
             line-height: 1.5;
+            color: var(--color-text-dark);
         }
         .pricing-detail {
             font-size: 1.8rem;
             font-weight: 700;
             margin-top: 15px;
-            color: #ffcc00; /* Gold color for maximum charge detail */
+            color: #ffcc00; /* Gold color for maximum charge detail - this should stand out */
         }
+        .pricing-box h3 {
+            color: var(--color-secondary); /* Pricing box heading in accent blue */
+        }
+
+        /* Adjustments for specific white text needs (e.g., primary title, or button text) */
+        #slide-intro h1 {
+            color: var(--color-text-light); /* Keep main title white for impact */
+        }
+        #slide-intro p {
+            color: var(--color-text-dark); /* Introductory paragraphs are dark */
+        }
+        #slide-intro .animated-element p {
+            color: var(--color-text-dark); /* Date and co-founder info also dark */
+        }
+        
+        .animated-element p a {
+            color: var(--color-secondary); /* Links should be distinct */
+            text-decoration: underline;
+        }
+        .animated-element p a:hover {
+            color: #003d80;
+        }
+        #slide-contact .content-item p a {
+             color: var(--color-text-dark); /* Contact links are dark, for readability on content-item */
+             text-decoration: none;
+        }
+        #slide-contact .content-item p a:hover {
+            color: var(--color-secondary);
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -194,7 +237,7 @@
             <h1 class="animated-element">Campus Placement Enhancement Proposal</h1>
             <p class="animated-element" style="font-size: 1.5rem; max-width: 900px;">
                 Presented by <span class="highlight">JobsConfirmed</span> to <br>
-                The Placement Cell / Administration,
+                The Placement Cell / Administration, **DY Patil University**
             </p>
             <p class="animated-element" style="margin-top: 40px;">
                 <span style="font-style: italic;">"Making student placements faster, smarter, and more connected."</span>
@@ -303,7 +346,7 @@
                 </div>
                 <div class="content-item">
                     <h3>Email</h3>
-                    <p><a href="mailto:contacts.jobsconfirmed@gmail.com" style="color: var(--color-text-light); text-decoration: none;">contacts.jobsconfirmed@gmail.com</a></p>
+                    <p><a href="mailto:contacts.jobsconfirmed@gmail.com">contacts.jobsconfirmed@gmail.com</a></p>
                 </div>
                 <div class="content-item">
                     <h3>Phone</h3>
